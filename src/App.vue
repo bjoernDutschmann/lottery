@@ -1,29 +1,55 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+        app
+        color="primary"
+        dark
+    >
+      <a href="/" class="d-flex align-center">
+        <v-img
+            alt="Lotto"
+            class="shrink mr-2"
+            contain
+            src="/lottery-bingo-svgrepo-com.svg"
+            transition="scale-transition"
+            width="40"
+        />
+        <h3>Onkel Ottos Lotto</h3>
+      </a>
+
+      <v-spacer></v-spacer>
+      <div class="d-none d-md-block">
+        <v-btn
+            href="/game"
+            target="_self"
+            text
+        >
+          <span class="mr-2">Letzte Ziehung</span>
+        </v-btn>
+      </div>
+    </v-app-bar>
+    <v-main>
+      <router-view/>
+    </v-main>
+    <MobileNavigation></MobileNavigation>
+  </v-app>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue';
+import MobileNavigation from '@/components/MobileNavigation';
 
-@Component({
+export default Vue.extend({
+  name: 'App',
   components: {
-    HelloWorld,
+    MobileNavigation: MobileNavigation
   },
-})
-export default class App extends Vue {}
-</script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  data: () => ({
+    //
+  }),
+});
+</script>
+<style>
+@import "style/main.scss";
 </style>

@@ -1,5 +1,6 @@
-# lottery-v2
+# Lottery
 
+Sample project to demonstrate the power of vue, typescript, GraphQL and Jest.
 ## Project setup
 ```
 npm install
