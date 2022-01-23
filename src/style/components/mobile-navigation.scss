@@ -1,0 +1,12 @@
+.mobile-nav{
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 8px 0;
+}
+.mobile-nav .v-btn .v-btn__content{
+  display: block;
+  text-align: center;
+  text-transform: none;
+}
